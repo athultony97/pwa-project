@@ -1,0 +1,67 @@
+<!-- 
+Name: Athul Tony
+Student ID: 1108130
+Name: Akhil Thomson Roy
+Student ID: 1082636
+Name: Christeena
+Student ID: 1082636
+Course: INFO 6128
+Date: 10 Dec 2022
+Professor: Marcelo Hespanhol
+Lab 02
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Meta tags -->
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A application where you can add items to make a list for your shopping.">
+      <meta name="keywords" content="shopping, cart, favourite, item, application, shopperlist">
+      <meta name="author" content="Athul Tony">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      <meta name="apple-mobile-web-app-title" content="Shopping List App">
+
+      <!-- Manifest link  -->
+      <link rel="manifest" href="manifest.json">
+
+      <!-- CSS link -->
+      <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/logo_icon_512.png">
+      <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="assets/icons/192.png">
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+    <!-- Header -->
+    <div class="header">
+       <img src="assets/icons/logo_icon_512.png" alt="logo">
+       <h3>Shoppers List</h3>
+    </div>
+        <h3>Add Items</h3>
+        <button id="additems" class="add-item">Add</button>
+        <div class="form-section" id="form-section">
+            <!-- Form starting-->
+            <form action="">
+                <div class="title-field">
+                    <label>Title</label>
+                    <input type="text" name="title" id="title" />
+                </div>
+                <div class="body-field">
+                    <label>Body</label>
+                    <input type="text" name="body" id="body"/>
+                </div>
+      
+            </form>
+            <div class="showBtn-field">
+                <button id="show-button">Show</button>
+            </div>
+    
+            <p id="error"></p>
+    
+        </div>
+        <script defer src="script.js".js></script>
+
+</html>
