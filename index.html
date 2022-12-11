@@ -3,12 +3,14 @@ Name: Athul Tony
 Student ID: 1108130
 Name: Akhil Thomson Roy
 Student ID: 1082636
-Name: Christeena
+Name: Christeena Sunny
 Student ID: 1082636
 Course: INFO 6128
 Date: 10 Dec 2022
 Professor: Marcelo Hespanhol
-Lab 02
+PWA Project
+
+REFERENCE: 'To Do Lists' App from Appstore
 -->
 
 
@@ -25,43 +27,47 @@ Lab 02
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       <meta name="apple-mobile-web-app-title" content="Shopping List App">
+      <title>PWA- Project</title>
 
       <!-- Manifest link  -->
       <link rel="manifest" href="manifest.json">
 
       <!-- CSS link -->
-      <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/logo_icon_512.png">
-      <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="assets/icons/192.png">
+      <link rel="icon" type="image/png" sizes="512x512" href="assets/output-onlinepngtools_512.png">
+      <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="assets/output-onlinepngtools_192.png">
       <link rel="stylesheet" href="style.css">
    </head>
    <body>
     <!-- Header -->
     <div class="header">
-       <img src="assets/icons/logo_icon_512.png" alt="logo">
+       <img src="assets/output-onlinepngtools_512.png" alt="logo">
        <h3>Shoppers List</h3>
     </div>
-        <h3>Add Items</h3>
-        <button id="additems" class="add-item">Add</button>
+        <button id="additems" class="show-item">+</button>
         <div class="form-section" id="form-section">
+            <h3>Add items </h3>
             <!-- Form starting-->
             <form action="">
-                <div class="title-field">
-                    <label>Title</label>
-                    <input type="text" name="title" id="title" />
+                <div class="form-input">
+                    <label for="item">Item:</label>
+                    <input type="text" name="title" id="item" placeholder="Enter the item to be added" required />
+                    <p class="error title-error"></p>
                 </div>
-                <div class="body-field">
-                    <label>Body</label>
-                    <input type="text" name="body" id="body"/>
-                </div>
-      
             </form>
             <div class="showBtn-field">
-                <button id="show-button">Show</button>
+                <button type="submit" value="Add" id="add_btn">Add</button>
             </div>
+            <div class="list-song-section">
+                <h3>Shopping List </h3>
+                <div id="list-song-container" class="list-song-container">
+                   <!-- commit changes -->
+                </div>
+             </div>
     
             <p id="error"></p>
     
         </div>
+        <!-- script-->
         <script defer src="script.js".js></script>
 
 </html>

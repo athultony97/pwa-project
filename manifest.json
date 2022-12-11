@@ -1,22 +1,21 @@
 {
     "short_name": "Shopping List",
-    "name": "My Music App",
+    "name": "Shopping List App",
     "description": "A application where you can add items to make a list for your shopping.",
-    "start_url": "https://christy-varghese.github.io/PWA/",
-    "scope": "/PWA/" ,
-    "id": "com.github.christy-varghese.PWA",
+    "start_url": "https://athultony97.github.io/pwa-project/",
+    "scope": "/pwa-project/" ,
     "theme_color": "rgb(192, 36, 239)",
     "background_color": "#e4d3e4",
     "orientation": "portrait",
     "display": "standalone",
     "icons":[{
-        "src": "assets/icons/logo_icon_512.png",
-        "sizes": "512x512",
+        "src": "assets/output-onlinepngtools_512.png",
+        "sizes": "500x500",
         "type": "image/png",
         "purpose" : "any"
     },
     {
-        "src": "assets/icons/logo_icon_192.png",
+        "src": "assets/output-onlinepngtools_192.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose" : "maskable"
