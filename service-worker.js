@@ -11,17 +11,18 @@ self.addEventListener("fetch", e => {
 })
 
 // cache assets
-const baseURL = "https://athultony97.github.io/pwa-project/"
+const bURL = "https://athultony97.github.io/pwa-project/"
 
 const cacheAssets = [
-  baseURL,
-  `${baseURL}index.html`,
-  `${baseURL}script.js`,
-  `${baseURL}manifest.json`,
-  `${baseURL}service-worker.js`,
-  `${baseURL}style.css`,
-  `${baseURL}assets/musical-note.png`,
-  `${baseURL}assets/musical-note(192x192).png`
+  bURL,
+  `${bURL}index.html`,
+  `${bURL}index1.html`,
+  `${bURL}script.js`,
+  `${bURL}manifest.json`,
+  `${bURL}service-worker.js`,
+  `${bURL}style.css`,
+  `${bURL}assets/output-onlinepngtools_512.png`,
+  `${bURL}assets/output-onlinepngtools_192.png`
 ] // Add all the files that you want to cache
 
 // install event

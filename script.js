@@ -3,7 +3,7 @@ if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker
         .register("./service-worker.js", {
-          scope: "/pwa-lab5/"
+          scope: "/pwa-project/"
         })
         .then(registration => {
           console.log("Service Worker registered: ", registration)
@@ -17,7 +17,12 @@ if ("serviceWorker" in navigator) {
 
 
 // disabling the form section initally
-//document.getElementById("form-section").style.display = "none"
+document.getElementById("form-section").style.display = "none"
+
+
+function showFormSec() {
+    document.getElementById("form-section").style.display = "block";
+}
 
 
   if ("Notification" in window && "serviceWorker" in navigator) {
@@ -44,7 +49,6 @@ import {
   collection,
   addDoc,
   getDocs,
-  updateDoc,
   doc,
   deleteDoc,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
@@ -58,6 +62,7 @@ const firebaseConfig = {
     appId: "1:550978748884:web:38d4e8ad677718e21e5641",
     measurementId: "G-RQMK4T7N3W"
   };
+
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
@@ -93,7 +98,7 @@ addItem.addEventListener("click", async () => {
         item: item.value,
       });
       console.log("Document written with ID: ", docRef.id);
-      displaySongs({ item: item.value }, docRef.id);
+      displayItems({ item: item.value }, docRef.id);
       clearFields();
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -105,3 +110,23 @@ addItem.addEventListener("click", async () => {
     error[1].innerHTML = "";
   }, 3000);
 });
+
+
+// Display the songs
+function displayItems(data, id) {
+    var itemList = document.getElementsByClassName("list-item-container");
+    var itemDivision = document.createElement("div");
+    itemDivision.classList.add("list-songs");
+    itemDivision.setAttribute("id", id);
+    itemDivision.innerHTML = `
+      <div class="textfields">
+           <div>
+              <h2 class="list-item-title">${data?.item}</h2>
+           </div>
+        </div>
+        <div class="buttons">
+        </div>
+      `;
+    itemList[0].appendChild(itemDivision);
+    deleteBtn(id, itemDivision.querySelector(".buttons"));
+  }
