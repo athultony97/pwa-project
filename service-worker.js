@@ -13,17 +13,17 @@ self.addEventListener("fetch", e => {
 // cache assets
 const baseURL =  "https://athultony97.github.io/pwa-project/"
 
-const cacheAssets = [
-  baseURL,
-  `${baseURL}index.html`,
-  `${baseURL}index1.html`,
-  `${baseURL}main.js`,
-  `${baseURL}manifest.json`,
-  `${baseURL}service-worker.js`,
-  `${baseURL}style.css`,
-  `${baseURL}assets/output-onlinepngtools_192.png`,
-  `${baseURL}assetsoutput-onlinepngtools_512.png`
-] // Add all the files that you want to cache
+const cacheStores = [
+    "https://athultony97.github.io/pwa-project/",
+    "https://athultony97.github.io/pwa-project/index.html",
+    "https://athultony97.github.io/pwa-project/index1.html",
+    "https://athultony97.github.io/pwa-project/script.js",
+    "https://athultony97.github.io/pwa-project/manifest.json",
+    "https://athultony97.github.io/pwa-project/service-worker.js",
+    "https://athultony97.github.io/pwa-project/style.css",
+    "https://athultony97.github.io/pwa-project/assets/output-onlinepngtools_512.png",
+    "https://athultony97.github.io/pwa-project/assets/output-onlinepngtools_192.png"
+  ]
 
 // install event
 self.addEventListener("install", function (event) {
@@ -32,7 +32,7 @@ self.addEventListener("install", function (event) {
     .open(cacheName)
     .then(function (cache) {
       console.log("[Service Worker] Installing...")
-      return cache.addAll(cacheAssets)
+      return cache.addAll(cacheStores)
     })
     .catch(err => {
       console.log("something went wrong", err)
