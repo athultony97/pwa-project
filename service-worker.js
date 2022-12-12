@@ -11,18 +11,18 @@ self.addEventListener("fetch", e => {
 })
 
 // cache assets
-const bURL = "https://athultony97.github.io/pwa-project/"
+const baseURL =  "https://athultony97.github.io/pwa-project/"
 
 const cacheAssets = [
-  bURL,
-  `${bURL}index.html`,
-  `${bURL}index1.html`,
-  `${bURL}script.js`,
-  `${bURL}manifest.json`,
-  `${bURL}service-worker.js`,
-  `${bURL}style.css`,
-  `${bURL}assets/output-onlinepngtools_512.png`,
-  `${bURL}assets/output-onlinepngtools_192.png`
+  baseURL,
+  `${baseURL}index.html`,
+  `${baseURL}index1.html`,
+  `${baseURL}main.js`,
+  `${baseURL}manifest.json`,
+  `${baseURL}service-worker.js`,
+  `${baseURL}style.css`,
+  `${baseURL}assets/output-onlinepngtools_192.png`,
+  `${baseURL}assetsoutput-onlinepngtools_512.png`
 ] // Add all the files that you want to cache
 
 // install event
@@ -48,39 +48,4 @@ self.addEventListener("activate", function (event) {
       return Promise.all(cacheNames.filter(cache => cache !== cacheName).map(cacheName => caches.delete(cacheName)))
     })
   )
-})
-
-self.addEventListener("notificationclick", (event) => {
-    const action = event.action;
-    const notification = event.notification;
-    const notificationData = notification.data;
-    console.log("Data:", action);
-    const options = {
-      includeUncontrolled: true,
-      type: "all",
-    };
-
-    switch (action) {
-        case "agree":
-          clients.matchAll(options).then((clients) => {
-            clients.forEach((client) => {
-              client.postMessage("So we both agree on that!");
-            });
-          });
-          break;
-    
-        case "disagree":
-          clients.matchAll(options).then((clients) => {
-            clients.forEach((clients) => {
-              clients.postMessage("Let's agree to disagree.");
-            });
-          });
-          break;
-    
-        case "":
-          console.log("Clicked on the notification.");
-          const openPromise = clients.openWindow("/index.html");
-          event.waitUntil(openPromise);
-          break;
-      }
 })

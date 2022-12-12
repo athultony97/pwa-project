@@ -14,7 +14,9 @@ if ("serviceWorker" in navigator) {
     })
   }
   
-
+  function onClickHome() {
+    myNavigator.pushPage("index1.html")
+  }
 
 // disabling the form section initally
 document.getElementById("form-section").style.display = "none"
@@ -39,6 +41,36 @@ function showFormSec() {
                 }
             });
         }
+    });
+
+    // when show button clicked: new notification is created
+    document.getElementById("add_btn").addEventListener("click", function () {
+        if (document.getElementById("title").value === "") {
+            document.getElementById("error").innerHTML = "Please add content in Title";
+        } else {
+            console.log("Else section")
+            var options = {
+                body: document.getElementById('body').value,
+                actions: [{
+                        action: "agree",
+                        title: "Agree"
+                    },
+                    {
+                        action: "disagree",
+                        title: "Disagree"
+                    },
+                ],
+            };
+            new Notification(document.getElementById("title").value)
+            //new Notification(document.getElementById("body").value)
+             navigator.serviceWorker.ready.then((register) => {
+             register.showNotification(title.value, options);
+            });
+        }
+    });
+
+    navigator.serviceWorker.addEventListener("message", function (event) {
+        document.getElementById("error").innerHTML = event.data;
     });
 }
 
