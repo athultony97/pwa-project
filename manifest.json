@@ -1,12 +1,12 @@
 {
     "short_name": "Shopping List",
     "name": "Shopping List App",
-    "description": "A application where you can add items to make a list for your shopping.",
+    "description": "An application where you can add items to make a list for your shopping.",
     "start_url": "https://athultony97.github.io/pwa-project/",
     "scope": "/pwa-project/" ,
     "id": "com.athultony97.pwa-project",
     "theme_color": "rgb(217, 65, 65)",
-    "background_color": "#e4d3e4",
+    "background_color": "#fadddd",
     "orientation": "portrait",
     "display": "standalone",
     "icons":[{
