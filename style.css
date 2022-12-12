@@ -9,10 +9,51 @@ body{
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
+#splash{
+    width: 40%;
+    height: 40%; 
+    margin-top: 5%;
+    margin-bottom: auto;
+    margin-left: 30%;
+    margin-right: auto;
+}
+
+#starthead{
+    font-style: italic;
+    font-weight: 1000;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    margin-left: 36%;
+    margin-right: 20%;
+}
+
+#btn{
+    margin-top: 5%;
+    margin-left: 52%;
+    padding: 5px;
+    font-size:medium;
+    color: rgb(255, 255, 255);
+    background-color: rgb(217, 65, 65);
+    border: none;
+
+}
+
+
+  .toolbar-button--outline {
+    border: 1px solid rgb(217, 65, 65) !important;
+  }
+
+
+
+
+
+
+
 #logo{
     display: flex;
     width: 50px;
     height: 50px;
+    
 }
 
 .header{
