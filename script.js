@@ -67,3 +67,4 @@ if ("Notification" in window && "serviceWorker" in navigator) {
 function showFormSec() {
     document.getElementById("form-section").style.display = "block";
 }
+
