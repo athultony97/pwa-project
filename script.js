@@ -70,7 +70,7 @@ function showFormSec() {
 
 const dark = document.getElementById('dark');
 
-btn.addEventListener('click', function onClick(event) {
+dark.addEventListener('click', function onClick(event) {
   // 👇️ change background color
   document.body.style.backgroundColor = 'darkgrey';
 
