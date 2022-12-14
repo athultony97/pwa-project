@@ -68,3 +68,12 @@ function showFormSec() {
     document.getElementById("form-section").style.display = "block";
 }
 
+const dark = document.getElementById('dark');
+
+btn.addEventListener('click', function onClick(event) {
+  // 👇️ change background color
+  document.body.style.backgroundColor = 'darkgrey';
+
+  // 👇️ optionally change text color
+  // document.body.style.color = 'white';
+});
