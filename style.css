@@ -108,6 +108,14 @@ h3{
     margin-left: 0;
 }
 
+.form-section1 h3{
+    background-color: rgb(217, 65, 65);
+    color: white;
+    padding: 5px;
+    font-weight: 500;
+    padding-left: 20px;
+}
+
 .form-input {
     display: flex;
     flex-direction: column;
