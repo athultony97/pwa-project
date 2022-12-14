@@ -12,6 +12,7 @@
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       <meta name="apple-mobile-web-app-title" content="Shopping List App">
+      <meta name="theme-color" content="rgb(217, 65, 65)" />
       <title>PWA- Project</title>
 
       <!-- Manifest link  -->
@@ -25,18 +26,18 @@
    <body>
     <!-- Header -->
     <div class="header">
-        <button id="Settings" class="show-item">Settings</button>
+        <button onclick="location.href='https://athultony97.github.io/pwa-project/settings.html'"id="Settings" class="show-item">Settings</button>
        <img src="assets/output-onlinepngtools_512.png" alt="logo" id="logo">
        <h3>Shoppers List</h3>
        <button id="additems" class="show-item">+</button>
     </div>
-        <div class="form-section" id="form-section">
+        <div class="form-section" id="form-section"> 
             <h3>Add items </h3>
             <!-- Form starting-->
             <form action="">
                 <div class="form-input">
                     <label for="item">Item:</label>
-                    <input type="text" name="title" id="item" placeholder="Enter the item to be added" required />
+                    <input type="text" name="item" id="item" placeholder="Enter the item to be added" required />
                     <p class="error title-error"></p>
                 </div>
             </form>
