@@ -176,3 +176,32 @@ h3{
 #buttons{
     margin-top: 5%;
 }
+
+header .error-ribbon::before {
+    content: 'Database Error';
+    display:block;
+    color:rgb(240,196,196);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    margin-bottom: 0.25rem;
+
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 1rem 1rem;
+    background-color: white;
+    border: 2px solid  rgb(217, 65, 65)
+
+}
+
+.list-songs{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 1rem 1rem;
+    background-color: white;
+    border: 2px solid  rgb(192, 36, 239);
+  }

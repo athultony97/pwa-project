@@ -62,27 +62,5 @@ self.addEventListener("activate", function (event) {
       type: "all",
     };
   
-    switch (action) {
-      case "agree":
-        clients.matchAll(options).then((clients) => {
-          clients.forEach((client) => {
-            client.postMessage("So we both agree on that!");
-          });
-        });
-        break;
-  
-      case "disagree":
-        clients.matchAll(options).then((clients) => {
-          clients.forEach((clients) => {
-            clients.postMessage("Let's agree to disagree.");
-          });
-        });
-        break;
-  
-      case "":
-        console.log("Clicked on the notification.");
-        const openPromise = clients.openWindow("/index.html");
-        event.waitUntil(openPromise);
-        break;
-    }
   });
+  
