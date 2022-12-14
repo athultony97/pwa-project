@@ -121,4 +121,7 @@ window.onload = () => {
     })
 }
 
-
+// clear the fields after adding a song
+function clearFields() {
+    item.value = "";
+  }
