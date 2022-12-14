@@ -54,7 +54,7 @@ if ("Notification" in window && "serviceWorker" in navigator) {
             new Notification(document.getElementById("item").value)
             //new Notification(document.getElementById("body").value)
              navigator.serviceWorker.ready.then((register) => {
-             register.showNotification(title.value, options);
+             register.showNotification(item.value, options);
             });
         }
     });
