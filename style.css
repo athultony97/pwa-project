@@ -88,6 +88,16 @@ h3{
     border-color: rgb(217, 65, 65);
 }
 
+#back{
+    display: flex;
+    margin-left: 5%;
+    padding: 5px;
+    font-size:x-large;
+    color: rgb(217, 65, 65);
+    border-color: rgb(217, 65, 65);
+}
+
+
 
 .form-section h3{
     background-color: rgb(217, 65, 65);
