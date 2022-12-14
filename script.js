@@ -96,6 +96,18 @@ var item = document.getElementById("item");
 
 var addItem = document.getElementById("add_btn");
 
+
+const itemsDB = new ItemsDB()
+itemsDB.open();
+
+function addshopper(){
+    itemsDB.add(item.value)
+}
+
+
+
+
+
 addItem.addEventListener("click", async () => {
     console.log(item.value)
     addDoc(collection(db, "shopperlist"), {
@@ -105,6 +117,7 @@ addItem.addEventListener("click", async () => {
     }).catch(err => {
         console.log(err)
     })
+    addshopper();
 })
 
 window.onload = () => {
@@ -121,7 +134,63 @@ window.onload = () => {
     })
 }
 
-// clear the fields after adding a song
-function clearFields() {
-    item.value = "";
-  }
+//Initialize APIs 
+const featureSelector = document.getElementById('feature-selector');
+const displaya = document.getElementById('display-a');
+
+
+featureSelector.addEventListener('change', (event) => {
+    displaya.innerText = '';
+    const selectedOption = event.target.value;
+    switch (selectedOption) {
+        case 'battery': handleBatteryStatusAPI(); break;
+        case 'page-visibility': handlePageVisibility(); break;
+    }
+});
+
+function handleBatteryStatusAPI() {
+    console.log('navigator:', navigator);
+    if ('getBattery' in navigator) {
+  
+      navigator.getBattery()
+        .then(battery => {
+          console.log('Battery:', battery);
+  
+          function writeBatteryInfo() {
+  
+            const batteryCharging = battery.charging ? 'Yes' : 'No';
+            const batteryLevel = (battery.level * 100).toFixed(0) + '%';
+            const chargingTime = battery.chargingTime + ' seconds';
+  
+            displaya.innerHTML = `
+              <div>Battery charging: <strong>${batteryCharging}</strong></div>
+              <div>Battery level: <strong>${batteryLevel}</strong></div>
+              <div>Charging time: <strong>${chargingTime}</strong></div>
+            `;
+          }
+          writeBatteryInfo(); 
+  
+          // battery charging state
+          battery.addEventListener('chargingchange', () => {
+            console.log("Battery charging:", battery.charging);
+            writeBatteryInfo();
+          });
+  
+          // battery level 
+          battery.addEventListener('levelchange', () => {
+            console.log("Battery level:", battery.level);
+            writeBatteryInfo();
+          });
+  
+          // battery charging time 
+          battery.addEventListener('chargingtimechange', () => {
+            console.log("Charging time:", battery.chargingTime);
+            writeBatteryInfo();
+          });
+  
+        });
+    }
+    else {
+      displaya.innerText = 'Battery API not supported on this device.';
+    }
+}
