@@ -39,22 +39,31 @@
      </form>
      <div id="stor-output"></div>
      <div id="features">
-         <h3 id="feahead">Features</h3>
-         <select id="feature-selector">
-            <option value="">Application Features </option>
-            <optgroup label="Lets have some fun">
-               <option value="battery">Battery Status API</option>
-               <option value="page-visibility">Page Visibility</option>
-            </optgroup>
-         </select>
+         <h3 id="feahead">Battery Status</h3>
+         <button id="battery"  class="show-item" onclick="getBattery()">Click Me!!</button>
      </div>
      
      <div class="display-content">
-      <div id="display-a"></div>
+      <div id="display-a">
+         <h2 id="batteryPer"></h2>
+         <h2 id="batteryStatus"></h2>
+      </div>
     </div>
 
 
 
      <script src="script.js" type="module"></script>
+
+     <script>
+      //API
+      async function getBattery(){
+
+      let batteryStatus = await navigator.getBattery();
+      document.getElementById('batteryPer').innerHTML = (batteryStatus.level * 100)+"%";
+      document.getElementById('batteryStatus').innerHTML = batteryStatus.charging ? "Charging" : "Not Charging" ;
+
+}
+   
+     </script>
    </body>
 </html>
